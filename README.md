@@ -1,3 +1,65 @@
+# Web-ohjelmoinnin jatkokurssi - Harjoitustyö
+
+## 5G00EV06-3001 - Oskari Saarinen
+
+### API
+
+* [coincap.io](https://docs.coincap.io/) - Kryptovaluutoiden kurssi ja historia tiedot viimeisen 11 vuoden ajalta
+* [live.blockcypher.com](https://live.blockcypher.com) - Lohkoketjuselain muutamalle kryptovaluutalle, kuten Bitcoin & Ethereum
+* ...
+
+### Ominaisuudet
+
+* Kryptovaluutta selain, joka näyttää nykyisen arvon sekä historian kaavioiden avulla
+* Markkina dataa, kuten kokonais arvo sekä sen historia
+* Käyttäjä voi hakea valuuttoja nimen, arvon, symbolin ja muiden saatavilla olevien parametrien mukaan
+* Saman tapainen kuin Coincapin omat sivut
+* Mahdollisesti myös lohkoketju-selain esim. [live.blockcypher.com](https://live.blockcypher.com) API:n avulla
+* ...
+
+### Esimerkkidataa (api.coincap.io/v2/assets)
+
+``` json
+{
+  "data": [
+    {
+      "id": "bitcoin",
+      "rank": "1",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "supply": "18859943.0000000000000000",
+      "maxSupply": "21000000.0000000000000000",
+      "marketCapUsd": "1143085021117.7609228604248984",
+      "volumeUsd24Hr": "19072405659.1801018324797556",
+      "priceUsd": "60609.1450603939218088",
+      "changePercent24Hr": "-1.4022653136332386",
+      "vwap24Hr": "61306.1680433456324563",
+      "explorer": "https://blockchain.info/"
+    },
+    {
+      "id": "ethereum",
+      "rank": "2",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "supply": "118153082.1240000000000000",
+      "maxSupply": null,
+      "marketCapUsd": "500134012315.8456696221642043",
+      "volumeUsd24Hr": "9465707405.3122993766701246",
+      "priceUsd": "4232.9324239799521188",
+      "changePercent24Hr": "-1.6401050436901671",
+      "vwap24Hr": "4283.6456702348881211",
+      "explorer": "https://etherscan.io/"
+    }
+  ],
+  "timestamp": 1635704883653
+}
+```
+
+<br>
+<br>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -92,7 +92,7 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 
 ...
 
-* ...
+* Käyttäjän päivittäessä sivun, tulee "Cannot GET /...", jos ensin on klikattu Routerin linkkiä, sillä backendiin ei ole määritelty näitä sivuja
 
 ## Screencast
 

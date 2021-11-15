@@ -74,7 +74,7 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 
 ### Kuvia
 
-<img alt="v1_1" src="readme_images/v1_screenshot_1.png" width="640px" />
+<img alt="v1_1" src="readme_images/v1_screenshot_1.png" />
 <br/>
 <img alt="v1_2" src="readme_images/v1_screenshot_2.png" width="640px" />
 <br/>

@@ -2,6 +2,8 @@
 
 ## 5G00EV06-3001 - Oskari Saarinen
 
+Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
+
 ### API
 
 * [coincap.io](https://docs.coincap.io/) - Kryptovaluutoiden kurssi ja historia tiedot viimeisen 11 vuoden ajalta
@@ -54,6 +56,47 @@
   "timestamp": 1635704883653
 }
 ```
+
+
+## Release 1: 2021-11-15 features
+
+Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
+
+* Projekti on toteutettu `TypeScript`:n avulla
+* Neljä sivua, joista kahdella näkyy dummy dataa
+* `React-Router` on käytössä sivujen vaihtoon
+* Tyylit on toteutettu `React-Bootstrap` ja perus `Bootstrap` -kirjastoilla, sekä puhtaalla `CSS`-koodilla
+* Jokaiselle APIlle on oma luokkansa, joiden avulla ladataan data verkosta ja muunnetaan `TypeScript` `interface`:ksi
+* Tällä hetkellä valmiina on Assets ja Exchanges APIt ja niiden sivuilla on dummy dataa ja sivut skaalautuvat hyvin pienillekin näytöille
+* Mikään sivu ei ole vielä täysin valmis UI:n puolesta, mutta muuten projekti on edistynyt hyvin
+* Blockcypher lohkoketjuselain APIa ei ole vielä lisätty
+* Tavoitteena on 5 työ
+
+### Kuvia
+
+<img alt="v1_1" src="readme_images/v1_screenshot_1.jpg" width="480px" />
+<br/>
+<img alt="v1_2" src="readme_images/v1_screenshot_2.jpg" width="480px" />
+<br/>
+<img alt="v1_3" src="readme_images/v1_screenshot_3.jpg" width="480px" />
+<br/>
+<img alt="v1_4" src="readme_images/v1_screenshot_4.jpg" width="480px" />
+<br/>
+
+## Release 2: 2021-11-29 features
+
+* ...
+
+
+## Known Bugs
+
+...
+
+* ...
+
+## Screencast
+
+...
 
 <br>
 <br>

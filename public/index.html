@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -25,9 +23,66 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
-  <body>
+    <style>
+        body {
+            background-image: url("%PUBLIC_URL%/crypto_bg-4.png");
+            background-position: -20px;
+            background-size: 48px;/*96px;*/
+            background-repeat: repeat;
+        }
+        /*.App-logo {
+                height: 40vmin;
+                pointer-events: none;
+            };* /
+
+        @media (prefers-reduced-motion: no-preference) {
+            #bg-image {
+                animation: App-logo-spin infinite 20s linear;
+            }
+        }
+
+        ;
+        @keyframes App-logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        };
+
+        #bg-image {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            z-index: -10;
+            animation-name: App-logo-spin;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes kenburns-top {
+            0% {
+                -webkit-transform: scale(1) translateY(0);
+                transform: scale(1) translateY(0);
+                -webkit-transform-origin: 50% 16%;
+                transform-origin: 50% 16%;
+            }
+            100% {
+                -webkit-transform: scale(1.25) translateY(-15px);
+                transform: scale(1.25) translateY(-15px);
+                -webkit-transform-origin: top;
+                transform-origin: top;
+            }
+        }*/
+    </style>
+</head>
+
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--img id="bg-image" src="%PUBLIC_URL%/crypto_bg-4.png"/-->
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +94,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>

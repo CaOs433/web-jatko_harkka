@@ -74,13 +74,13 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 
 ### Kuvia
 
-<img alt="v1_1" src="readme_images/v1_screenshot_1.jpg" width="480px" />
+<img alt="v1_1" src="/readme_images/v1_screenshot_1.jpg" width="480px" />
 <br/>
-<img alt="v1_2" src="readme_images/v1_screenshot_2.jpg" width="480px" />
+<img alt="v1_2" src="/readme_images/v1_screenshot_2.jpg" width="480px" />
 <br/>
-<img alt="v1_3" src="readme_images/v1_screenshot_3.jpg" width="480px" />
+<img alt="v1_3" src="/readme_images/v1_screenshot_3.jpg" width="480px" />
 <br/>
-<img alt="v1_4" src="readme_images/v1_screenshot_4.jpg" width="480px" />
+<img alt="v1_4" src="/readme_images/v1_screenshot_4.jpg" width="480px" />
 <br/>
 
 ## Release 2: 2021-11-29 features

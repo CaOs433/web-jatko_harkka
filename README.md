@@ -76,11 +76,11 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 
 <img alt="v1_1" src="readme_images/v1_screenshot_1.png" />
 <br/>
-<img alt="v1_2" src="readme_images/v1_screenshot_2.png" width="640px" />
+<img alt="v1_2" src="readme_images/v1_screenshot_2.png" />
 <br/>
-<img alt="v1_3" src="readme_images/v1_screenshot_3.png" width="640px" />
+<img alt="v1_3" src="readme_images/v1_screenshot_3.png" />
 <br/>
-<img alt="v1_4" src="readme_images/v1_screenshot_4.png" width="640px" />
+<img alt="v1_4" src="readme_images/v1_screenshot_4.png" />
 <br/>
 
 ## Release 2: 2021-11-29 features

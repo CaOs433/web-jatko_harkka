@@ -25,3 +25,6 @@ yarn-error.log*
 vanhaa/
 
 vanha_*.*
+
+src/api/CoinCap/CoinCap.ts
+src/api/CoinCap/Assets/final.json

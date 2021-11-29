@@ -103,7 +103,16 @@ Jokainen kooditiedosto on dokumentoitu ja niistä selviää koodin toiminta.
 * `React-Bootstrap`: CSS [tyylikirjasto](https://react-bootstrap.github.io) (Käytetty myös puhdasta CSS-koodia)
 
 
-### Kuvia
+### Tiedostot:
+
+`src/Components`: `JSX`-komponentit
+`src/Screens`: Sivut joihin `React-Router` ohjaa
+`src/api/Assets`: Assets API
+`src/api/Exchanges`: Exchanges API
+`src/api/Rates`: Rates API
+
+
+### Kuvia:
 
 <img alt="v2_1" src="readme_images/v2_screenshot_1.png" />
 <br/>

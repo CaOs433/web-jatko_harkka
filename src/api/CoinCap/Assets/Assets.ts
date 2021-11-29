@@ -1,78 +1,45 @@
-import { Assets as AssetsType, History, Markets, FinalAssets } from "./type";
+// Typescript interfaces for data types
+import { Assets as AssetsType, History, Markets } from "./type";
+
+// Axios library for fetching data from a server
 import axios from "axios";
 
-//import { ConvertAssets, Assets as AssetsType } from "./ParseAssets";
+async function getData<Output>(url: string): Promise<Output | undefined> {
+  // Fetch data from the server
+  const response = await axios.get(url);
+  // Was the request succesfull?
+  if (response.status === 200) {
+    // Success
+    console.log("(200): success");
+    // Get the data from response
+    const data = await response.data;
 
-export class Assets {
-    assets?: FinalAssets.RootObject;
-    //history: History.RootObject;
-    //markets: Markets.RootObject;
+    // Try to parse the data into Typescript interface
+    try {
+      console.log(`data: ${data}`);
+      const parsed: Output = JSON.parse(JSON.stringify(data));
+      console.log("parsed ok");
+      return parsed;
 
-    updateCount: number;
-
-    baseUrl = "https://crypto-web-projekti.herokuapp.com/assets.json"; //"https://api.coincap.io/v2"; //"https://api.saarinen.xyz/AssetsExampleData.json";
-
-    constructor(assets?: FinalAssets.RootObject) {
-        this.update = this.update.bind(this);
-        this.getAssets = this.getAssets.bind(this);
-        this.parseAssets = this.parseAssets.bind(this);
-
-        this.updateCount = 0;
-
-        if (assets === undefined) {
-            this.update();
-        } else {
-            this.assets = assets;
-        }
+    } catch (e) {
+      // Error in the try block
+      console.log(`Error while parsing JSON: ${e}`);
     }
 
-    update() {
-        this.updateCount++;
-        console.log(`${this.updateCount}. update`);
-        this.getAssets();
-    }
-
-    async getAssets(coin?: string) {
-        const coins = coin === undefined || coin === "";
-        /*const endfix = (coins) ? "" : "/"+coin;
-        const url = this.baseUrl; //`${this.baseUrl}/assets${endfix}`;*/
-        const url = this.baseUrl;//'http://localhost:3001/assets.json';
-
-        const response = await axios.get(url);
-        if (response.status === 200) {
-            const data = await response.data;
-            console.log(JSON.stringify(data));
-            console.log('(200): success')
-            this.parseAssets(data, coins);
-
-        } else { console.log(`status (${response.status}): ${response.statusText}`); }
-    }
-
-    parseAssets(data: any, coins: boolean) {
-        if (coins) {
-            try {
-                console.log(`data: ${data}`);
-                const parsed: AssetsType.RootObject = JSON.parse(JSON.stringify(data));
-                console.log('parsed ok');
-                const newAssets = parsed.data.map(asset => {
-                    let rtn: any = asset;
-                    rtn.history = [];
-                    return rtn;
-                });
-                console.log('newAssets ok');
-                const rtnData: FinalAssets.RootObject = { timestamp: parsed.timestamp, data: newAssets };
-                console.log('rtnData ok');
-                console.log(`rtnData: ${rtnData}`);
-                this.assets = rtnData;
-
-                //console.log(JSON.stringify(this.assets));
-
-                //const assets = ConvertAssets.toAssets(JSON.stringify(data));
-                //console.log(assets);
-            } catch (e) {
-                console.log(`Error while parsing JSON: ${e}`);
-            }
-        }
-    }
-
+  } else {
+    // Request wasn't successfull
+    console.log(`status (${response.status}): ${response.statusText}`);
+    // Return undefined
+    return undefined;
+  }
 }
+
+// Fumction to fetch assets data
+export const getAssets = () => getData<AssetsType.RootObject>("https://crypto-web-projekti.herokuapp.com/get/assets");
+// Function to fetch history data
+export const getHistory = (id?: string) => getData<History.RootObject>("https://crypto-web-projekti.herokuapp.com/get/history/"+id);
+// Function to fetch market data
+export const getMarkets = (id?: string) => getData<Markets.RootObject>("https://crypto-web-projekti.herokuapp.com/get/markets/"+id);
+
+
+

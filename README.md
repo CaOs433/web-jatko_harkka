@@ -8,7 +8,6 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 
 * [coincap.io](https://docs.coincap.io/) - Kryptovaluutoiden kurssi ja historia tiedot viimeisen 11 vuoden ajalta
 * [live.blockcypher.com](https://live.blockcypher.com) - Lohkoketjuselain muutamalle kryptovaluutalle, kuten Bitcoin & Ethereum
-* ...
 
 ### Ominaisuudet
 
@@ -17,7 +16,6 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 * Käyttäjä voi hakea valuuttoja nimen, arvon, symbolin ja muiden saatavilla olevien parametrien mukaan
 * Saman tapainen kuin Coincapin omat sivut
 * Mahdollisesti myös lohkoketju-selain esim. [live.blockcypher.com](https://live.blockcypher.com) API:n avulla
-* ...
 
 ### Esimerkkidataa (api.coincap.io/v2/assets)
 
@@ -85,18 +83,37 @@ Heroku [linkki](https://crypto-web-projekti.herokuapp.com)
 
 ## Release 2: 2021-11-29 features
 
-* ...
+Sovellus on valmiina [Herokussa](https://crypto-web-projekti.herokuapp.com).
+Jokainen kooditiedosto on dokumentoitu ja niistä selviää koodin toiminta.
+
+### Sivut:
+
+* Home: Sivukartta ja tervetuloa teksti
+* Assets: Lista kryptovaluutoista ja niiden dataa
+* Exchanges: Lista kryptovaluutta pörsseistä ja niiden dataa
+* Rates: Lista erilaisista krypto- ja fiat-valuutoista ja niiden arvo yhdysvaltain dollareissa
+
+
+### Käytetyt tekniikat ja kirjastot:
+
+* `Typescript`: Kieli, jolla projekti on toteutettu
+* `React-Router`: Navigointi sivujen välillä
+* `Echarts`: Kaavio kirjasto
+* `Axios`: Datan haku palvelimelta
+* `React-Bootstrap`: CSS tyylikirjasto
 
 
 ## Known Bugs
 
 ...
 
-* Käyttäjän päivittäessä sivun, tulee "Cannot GET /...", jos ensin on klikattu Routerin linkkiä, sillä backendiin ei ole määritelty näitä sivuja
+* Jokin sivun osa saattaa näkyä huonosti pienemmillä näytöillä
 
 ## Screencast
 
-...
+Tavoitteena 5 työ
+
+[![Screencast](https://img.youtube.com/vi/BQ7Fzsiqxkk/0.jpg)](https://www.youtube.com/watch?v=BQ7Fzsiqxkk)
 
 <br>
 <br>

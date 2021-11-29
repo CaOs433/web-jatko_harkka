@@ -1,53 +1,66 @@
+// Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap JS
 import "bootstrap/js/src/collapse.js";
 
+// React
 import React from "react";
 
+// React Router elements
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 
-import { Navbar, Container, Row, Col, Nav/*, NavLink*/ } from "react-bootstrap";
+// React Bootstrap elements
+import { Navbar, Container, Row, Col, Nav } from "react-bootstrap";
 
-import { Assets } from './api/CoinCap/Assets/Assets';
-import { FinalAssets } from "./api/CoinCap/Assets/type";
+// Function to fetch assets data
+import { getAssets } from './api/CoinCap/Assets/Assets';
+// Typescript interface for assets data (getAssets() returns this)
+import { Assets } from "./api/CoinCap/Assets/type";
 
-import { Exchanges } from "./api/CoinCap/Exchanges/Exchanges";
+// Function to fetch exchanges data
+import { getExchanges } from "./api/CoinCap/Exchanges/Exchanges";
+// Typescript interface for exchanges data (getExchanges() returns this)
 import { Exchanges as ExchangesType } from "./api/CoinCap/Exchanges/type";
 
+// Screens:
 import HomeScreen from "./Screens/HomeScreen";
 import AssetsScreen from './Screens/AssetsScreen';
-import HistoryScreen from "./Screens/HistoryScreen";
-import MarketsScreen from "./Screens/MarketsScreen";
 import ExchangesScreen from "./Screens/ExchangesScreen";
-
-//import headerBgColor from "./bg_128-72-255-70.png";
+import RatesScreen from "./Screens/RatesScreen";
 
 function App() {
-  /*let data = new Assets();
-  let [assets, setAssets] = React.useState<FinalAssets.RootObject>();
 
+  // Assets data
+  const [assets, setAssets] = React.useState<Assets.RootObject>();
+
+  // Fetch and save the assets data from the server into state
+  const updateAssets = async () => {
+    // Await the data
+    const newData = await getAssets();
+    // If data is not undefined, save it into state
+    if (newData !== undefined) {
+      setAssets(newData);
+    }
+  };
+
+  // Exchanges data
+  const [exchanges, setExchanges] = React.useState<ExchangesType.RootObject>();
+
+  // Fetch and save the exchanges data from the server into state
+  const updateExchanges = async () => {
+    // Await the data
+    const newData = await getExchanges();
+    // If data is not undefined, save it into state
+    if (newData !== undefined) {
+      setExchanges(newData);
+    }
+  };
+
+  // Update assets and exchanges data on page load
   React.useEffect(() => {
-      setAssets(data.assets);
-  }, [data.assets])*/
-
-  let [data, setData] = React.useState<Assets>(new Assets());
-  let [assets, setAssets] = React.useState<FinalAssets.RootObject>();
-
-  const updateAssets = () => setData(new Assets(data.assets));
-
-  let [exchangesData, setExchangesData] = React.useState<Exchanges>(new Exchanges());
-  let [exchanges, setExchanges] = React.useState<ExchangesType.RootObject>();
-
-  const updateExchanges = () => setExchangesData(new Exchanges(exchangesData.exchanges));
-
-  React.useEffect(() => {
-    console.log('useEffect (data.assets)');
-    setAssets(data.assets);
-  }, [data.assets]);
-
-  React.useEffect(() => {
-    console.log('useEffect (exchangesData.exchanges)');
-    setExchanges(exchangesData.exchanges);
-  }, [exchangesData.exchanges]);
+    updateAssets();
+    updateExchanges();
+  }, []);
 
   return (
     <div style={styles.body}>
@@ -55,44 +68,14 @@ function App() {
         <Container fluid className="text-center">
           <Row>
             <Col sm={1} />
-            <Col sm={10} >
+            {/* Content */}
+            <Col sm={10} style={{minWidth: "fit-content"}} >
+              {/* Router */}
               <Router>
+                {/* Navigation bar */}
                 <Navbar className="navbar-inverse" bg="dark" variant="dark" expand="lg" style={styles.header}>
-                  {/*<div style={
-                    {
-                      //backgroundColor: "rgba(128, 72, 255, 0.7)",
-                      //backgroundImage: `url(${headerBgColor})`,
-                      //backgroundRepeat: "repeat",
-                      position: "absolute",
-                      width: "100%",
-                      height: "100%",
-                      margin: 0,
-                      paddingTop: "13px",
-                      paddingLeft: 0,//"20px",
-                      paddingBottom: "13px",
-                      paddingRight: 0,//"20px",
-
-                      /*borderTopLeftRadius: "25px",
-                      borderTopRightRadius: "0px",
-                      borderBottomLeftRadius: "25px",
-                      borderBottomRightRadius: "0px",* /
-                    }
-                  } >
-                    <div style={
-                      {
-                        backgroundColor: "rgba(128, 72, 255, 0.7)",
-                        position: "relative",
-                        width: "100%",
-                        height: "100%",
-                        /*borderTopLeftRadius: "25px",
-                        borderTopRightRadius: "0px",
-                        borderBottomLeftRadius: "25px",
-                        borderBottomRightRadius: "0px",* /
-                        //margin: 0
-                      }
-                    }/>
-                  </div>*/}
                   <Container style={{position: "relative"}}>
+                    {/* Crypto -symbol in navigation bar */}
                     <Navbar.Brand>
                       <Container style={styles.textLogo} id="text-logo">
                         <Row>
@@ -102,72 +85,43 @@ function App() {
                       </Container>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    {/* Navigation links (collapsing into list on small screens) */}
                     <Navbar.Collapse id="basic-navbar-nav">
                       <Nav className="mr-auto" style={styles.headerItems}>
                         <NavLink to={"/"} className="nav-link">Home</NavLink>
                         <NavLink to={"/Assets"} className="nav-link">Assets</NavLink>
-                        <NavLink to={"/History"} className="nav-link">History</NavLink>
-                        <NavLink to={"/Markets"} className="nav-link">Markets</NavLink>
                         <NavLink to={"/Exchanges"} className="nav-link">Exchanges</NavLink>
+                        <NavLink to={"/Rates"} className="nav-link">Rates</NavLink>
                       </Nav>
                     </Navbar.Collapse>
                   </Container>
                 </Navbar>
+                {/* Routes to pages */}
                 <Routes>
                   <Route path="/" element={<HomeScreen />} />
-                  <Route path="/Assets" element={<AssetsScreen assets={assets} updateAssetsData={updateAssets/*data.update*/} />} />
-                  <Route path="/History" element={<HistoryScreen />} />
-                  <Route path="/Markets" element={<MarketsScreen />} />
-                  <Route path="/Exchanges" element={<ExchangesScreen exchanges={exchanges} updateExchangesData={updateExchanges/*exchangesData.update*/} />} />
+                  <Route path="/Assets" element={<AssetsScreen assets={assets} updateAssetsData={updateAssets} />} />
+                  <Route path="/Exchanges" element={<ExchangesScreen exchanges={exchanges} updateExchangesData={updateExchanges} />} />
+                  <Route path="/Rates" element={<RatesScreen />} />
                 </Routes>
-
               </Router>
-                  <footer id="sticky-footer" className="site-footer clearfix py-2 bg-dark text-white-50 mr-auto" style={styles.footer} > {/*"py-2 bg-dark text-white-50"*/}
-                    <Container className="text-center">
-                      <small>Oskari Saarinen &copy; 2021</small>
-                    </Container>
-                  </footer>
+                {/* Page footer */}
+                <footer id="sticky-footer" className="site-footer clearfix py-2 bg-dark text-white-50 mr-auto" style={styles.footer} >
+                  <Container className="text-center">
+                    <small>Oskari Saarinen &copy; 2021</small>
+                  </Container>
+                </footer>
             </Col>
             <Col sm={1} />
           </Row>
-
         </Container>
-
       </main>
-    </div>
-  );
-
-  return (
-    <div className="App">
-
-      <button onClick={data.update}>Update</button>
-
-      <Router>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Container>
-          <Navbar.Brand>Crypto</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <NavLink to={"/"} className="nav-link">HomeView</NavLink>
-              <NavLink to={"/Assets"} className="nav-link">Assets</NavLink>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/Assets" element={<AssetsScreen assets={assets} updateAssetsData={data.update} />}/>
-      </Routes>
-
-    </Router>
-
     </div>
   );
 }
 
 export default App;
 
+// CSS styles
 const styles = {
   body: {
     //backgroundColor: "rgba(120, 40, 255, 0.1)",
@@ -272,17 +226,3 @@ const styles = {
     paddingBottom: 0,
   }
 }
-/*
-<BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomeScreen />}>
-            <Route index element={<HomeScreen />} />
-            <Route path="Assets" element={<AssetsScreen />}>
-              {/*<Route path=":teamId" element={<HomeScreen />} />
-              <Route path="new" element={<HomeScreen />} />
-              <Route index element={<HomeScreen />} />* /}
-            </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      */

@@ -96,16 +96,35 @@ Jokainen kooditiedosto on dokumentoitu ja niistä selviää koodin toiminta.
 
 ### Käytetyt tekniikat ja kirjastot:
 
-* `Typescript`: Kieli, jolla projekti on toteutettu
-* `React-Router`: Navigointi sivujen välillä
-* `Echarts`: Kaavio kirjasto
-* `Axios`: Datan haku palvelimelta
-* `React-Bootstrap`: CSS tyylikirjasto
+* `Typescript`: [Kieli](https://www.typescriptlang.org), jolla projekti on toteutettu
+* `React-Router`: Navigointi sivujen välillä ([kirjasto](https://reactrouter.com/docs/en/v6/getting-started/tutorial))
+* `Echarts`: Kaavio [kirjasto](https://echarts.apache.org/en/index.html)
+* `Axios`: Datan haku palvelimelta ([kirjasto](https://www.npmjs.com/package/axios))
+* `React-Bootstrap`: CSS [tyylikirjasto](https://react-bootstrap.github.io) (Käytetty myös puhdasta CSS-koodia)
 
+
+### Kuvia
+
+<img alt="v2_1" src="readme_images/v2_screenshot_1.png" />
+<br/>
+<img alt="v2_2" src="readme_images/v2_screenshot_2.png" />
+<br/>
+<img alt="v2_3" src="readme_images/v2_screenshot_3.png" />
+<br/>
+<img alt="v2_4" src="readme_images/v2_screenshot_4.png" />
+<br/>
+<img alt="v2_5" src="readme_images/v2_screenshot_5.png" />
+<br/>
+<img alt="v2_6" src="readme_images/v2_screenshot_6.png" />
+<br/>
+
+<img alt="ui" src="readme_images/ui.png" />
+<br/>
 
 ## Known Bugs
 
-...
+Käytetty API on ilmainen ilman API-avainta rajoitetusti, mutta se on cors suojattu, joten lataus suoraan selaimesta ei onnistu.
+Data haetaan nyt backendistä JSON-tiedostoista, mutta yritän tehdä proxyn, joka hakee datan API:sta.
 
 * Jokin sivun osa saattaa näkyä huonosti pienemmillä näytöillä
 

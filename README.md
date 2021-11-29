@@ -105,25 +105,11 @@ Jokainen kooditiedosto on dokumentoitu ja niistä selviää koodin toiminta.
 
 ### Tiedostot:
 
-`src/Components`: `JSX`-komponentit
-
-<br/>
-
-`src/Screens`: Sivut joihin `React-Router` ohjaa
-
-<br/>
-
-`src/api/Assets`: Assets API
-
-<br/>
-
-`src/api/Exchanges`: Exchanges API
-
-<br/>
-
-`src/api/Rates`: Rates API
-
-<br/>
+`src/Components`: `JSX`-komponentit <br/>
+`src/Screens`: Sivut joihin `React-Router` ohjaa <br/>
+`src/api/Assets`: Assets API <br/>
+`src/api/Exchanges`: Exchanges API <br/>
+`src/api/Rates`: Rates API <br/>
 
 ### Kuvia:
 

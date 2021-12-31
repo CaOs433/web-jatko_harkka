@@ -129,6 +129,8 @@ Jokainen kooditiedosto on dokumentoitu ja niistä selviää koodin toiminta.
 <img alt="ui" src="readme_images/ui.png" />
 <br/>
 
+<!--
+
 ## Known Bugs
 
 Käytetty API on ilmainen ilman API-avainta rajoitetusti, mutta se on cors suojattu, joten lataus suoraan selaimesta ei onnistu.
@@ -136,11 +138,14 @@ Data haetaan nyt backendistä JSON-tiedostoista, mutta yritän tehdä proxyn, jo
 
 * Jokin sivun osa saattaa näkyä huonosti pienemmillä näytöillä
 
+
 ## Screencast
 
 Tavoitteena 5 työ
 
 [![Screencast](https://img.youtube.com/vi/BQ7Fzsiqxkk/0.jpg)](https://www.youtube.com/watch?v=BQ7Fzsiqxkk)
+
+-->
 
 <br>
 <br>
